@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechFlow Solutions</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Login Page -->
+        <div id="login-page" class="page active">
+            <h1>TechFlow Solutions</h1>
+            <img src="logo.png" alt="TechFlow Solutions Logo" class="logo">
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <button onclick="login()">Login</button>
+            <p id="login-error"></p>
+        </div>
+
+        <!-- Admin Dashboard -->
+        <div id="admin-dashboard" class="page">
+            <h1>Admin Dashboard</h1>
+            <button onclick="logout()">Logout</button>
+            <div class="dashboard-content">
+                <h2>Manage Employees</h2>
+                <input type="text" id="employee-name" placeholder="Employee Name">
+                <button onclick="addEmployee()">Add Employee</button>
+                <ul id="employee-list"></ul>
+
+                <h2>Assign Tasks</h2>
+                <input type="text" id="task-name" placeholder="Task Name">
+                <button onclick="assignTask()">Assign Task</button>
+                <ul id="task-list"></ul>
+
+                <h2>Approve Leave Requests</h2>
+                <ul id="leave-approval-list"></ul>
+            </div>
+        </div>
+
+        <!-- Employee Dashboard -->
+        <div id="employee-dashboard" class="page">
+            <h1>Employee Dashboard</h1>
+            <button onclick="logout()">Logout</button>
+            <div class="dashboard-content">
+                <h2>Your Assigned Tasks</h2>
+                <ul id="employee-task-list"></ul>
+
+                <h2>Submit Work Report</h2>
+                <textarea id="work-report" placeholder="Submit your report"></textarea>
+                <button onclick="submitReport()">Submit Report</button>
+                <p id="report-status"></p>
+
+                <h2>Leave Requests</h2>
+                <input type="date" id="leave-start" placeholder="Start Date">
+                <input type="date" id="leave-end" placeholder="End Date">
+                <button onclick="requestLeave()">Request Leave</button>
+                <ul id="leave-list"></ul>
+                <p id="leave-notification"></p>
+
+                <h2>Settings</h2>
+                <button onclick="showSettings()">Settings</button>
+            </div>
+        </div>
+
+        <!-- Settings Page -->
+        <div id="settings-page" class="page">
+            <h1>Settings</h1>
+            <button onclick="backToDashboard()">Back</button>
+            <div class="dashboard-content">
+                <h2>Change Password</h2>
+                <input type="password" id="new-password" placeholder="New Password">
+                <button onclick="changePassword()">Change Password</button>
+                <p id="password-status"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
